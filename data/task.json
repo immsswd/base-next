@@ -1,19 +1,24 @@
 {
   "tasks": [
     {
-      "id": "234",
-      "name": "build",
-      "text": "lorem ipsum"
+      "id": "a146fcb8-d153-4183-ba7b-a5f3a4e0ef4f",
+      "name": "Responsive Web Page",
+      "text": "Create a responsive web page that adjusts its layout and design based on the user's device (desktop, tablet, or mobile)."
     },
     {
-      "id": "09165f09-882b-42db-9b8f-8252f13f42ef",
-      "name": "Oatside",
-      "text": "Buy some Oatside at store "
+      "id": "840cc508-ad0f-457d-8095-7c74bd90b427",
+      "name": "Next JS is Great",
+      "text": "Next js is Great, Creating more feature for this app"
     },
     {
-      "id": "337f0158-6cf8-4cd6-b373-39252185762e",
-      "name": "Lorem",
-      "text": "Lorem Ipsum dolor sit amet"
+      "id": "0549b413-fb9a-4dce-9d7b-4449cd157980",
+      "name": "Root Callback",
+      "text": "Contains all the parts of a tooltip."
+    },
+    {
+      "id": "18ea961e-eb0d-4f07-904d-1e8f8a06d20d",
+      "name": "Benefits of Using Interfaces:",
+      "text": "Type Safety: Interfaces provide type checking, ensuring that objects adhere to a specific structure. This helps catch type-related errors at compile time.\n\nDocumentation: Interfaces serve as documentation for your code, making it clear what properties an object should have.\n\nCode Maintainability: Interfaces make your code more maintainable because they define a contract that objects must follow, which helps prevent unexpected changes."
     }
   ]
 }

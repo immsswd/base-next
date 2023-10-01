@@ -17,8 +17,10 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { FormEventHandler, useState } from "react";
 import { addTodo } from "@/utils/task";
+import { useToast } from "../ui/use-toast";
 
 export function AddNewTask() {
+  const { toast } = useToast();
   const router = useRouter();
   const [newTaskValue, setNewTaskvalue] = useState<string>("");
   const [newTaskDescValue, setNewTaskDescValue] = useState<string>("");
@@ -26,12 +28,18 @@ export function AddNewTask() {
     e.preventDefault();
     // alert("Ok Clicked");
     // console.log(newTaskValue, " ", newTaskDescValue);
-    await addTodo({
+    const resAdded = await addTodo({
       id: uuid4(),
       name: newTaskValue,
       text: newTaskDescValue,
     });
-
+    if (resAdded) {
+      toast({
+        title: `Yor new task ${newTaskValue} `,
+        description: "Successfully added",
+        duration: 5000,
+      });
+    }
     setNewTaskDescValue("");
     setNewTaskvalue("");
     router.refresh();
@@ -47,7 +55,8 @@ export function AddNewTask() {
         <DialogHeader>
           <DialogTitle>Add new Task</DialogTitle>
           <DialogDescription>
-            Make changes to your new taks here. Click save when youre done.
+            Make changes and create your new tasks here. Click save when youre
+            done.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmitNewTask}>
@@ -59,6 +68,7 @@ export function AddNewTask() {
               <Input
                 id="task"
                 value={newTaskValue}
+                required
                 name="taskName"
                 onChange={(e) => setNewTaskvalue(e.target.value)}
                 placeholder="Task todo's name here"
@@ -76,6 +86,7 @@ export function AddNewTask() {
               /> */}
               <Textarea
                 id="task-description"
+                required
                 value={newTaskDescValue}
                 name="taskDescription"
                 onChange={(e) => setNewTaskDescValue(e.target.value)}
